@@ -1,20 +1,24 @@
 import React, { Component } from 'react';
 import './Header.css';
-import react_logo from '../../logo.svg';
+
 
 class Header extends Component {
-
+    
     handleSearchSubmit(event){
 
     //prevent the form to be submitted to its action url
     event.preventDefault();
-    console.log("search button was clicked");
+    this.props.onSearchClick(this.state.SearchTerm);
+    
     }
+
+    
 
     render() {
         return (
         <div className="header">
-            <img src={react_logo} alt="React logo" /><a href="#default" className="logo"> React App Header</a>
+            <a href="#default" className="logo"> {this.props.title}</a> 
+            <img src={this.props.logo} alt="React logo" /><a href="#default" className="logo"> React App Header</a>
             <div className="header-right">
                 <div className="search-container">
                     <form action="">
