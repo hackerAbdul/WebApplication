@@ -7,7 +7,7 @@ class Footer extends Component{
       <div>
         <div className="footer">
           <p>Footer</p>
-          <table id="Content">
+          <table id="Content" align="center">
           <tbody>
             <tr>
               <th>About</th>
