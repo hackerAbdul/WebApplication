@@ -13,7 +13,7 @@ class App extends Component {
       <div className="container">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <div className="header">
-          <Header logo={react_logo} />
+          <Header  logo={react_logo} />
         </div>
         <div className="categories">
           <Categories />
