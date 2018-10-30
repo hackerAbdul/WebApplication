@@ -1,8 +1,26 @@
 .footer {
+    position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: red;
+    background-color: rgb(133, 125, 156);
     color: white;
     text-align: center;
  }
+ 
+ #Content{
+    font-size: 20px;
+    padding-left: 450px;
+    padding-right: 0px;
+    width: 75%;
+ }
+
+ #Content th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    color: white;
+}
+
+#Content td, #Content th {
+    padding: 8px;
+}
