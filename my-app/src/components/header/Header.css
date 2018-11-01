@@ -1,12 +1,13 @@
 .header {
     overflow: hidden;
-    background-color: #05386b;
+    background-color: rgb(133,125,156);
     padding: 5px 0px;
-
+    color: white;
+    text-decoration: none;
     top: 0;
     left:0;
     width: 100%;
-    }
+}
 
 .header a {
     float: left;
@@ -51,6 +52,8 @@
     font-size: 14px;
     border: none;
 }
+
+
     
 .header .search-container button {
     float: right;
@@ -67,7 +70,7 @@
     background: #ccc;
 }
     
- @media screen and (max-width: 600px) {
+@media screen and (max-width: 600px) {
 
     .header img{
         display: block;
@@ -79,6 +82,4 @@
         display: block;
         text-align: center;
     }
-    
-    
 }

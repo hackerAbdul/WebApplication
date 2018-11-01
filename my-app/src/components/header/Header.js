@@ -26,6 +26,10 @@ class Header extends Component {
                         <button type="submit" onClick={this.handleSearchSubmit}>Search</button>
                     </form>
                 </div>
+                <div className="login-register">
+                    {/* <a href="link9">Login/Register</a> */}
+                    <p><a href="link9">Login/Register</a></p>
+                </div>
             </div>
         </div>
         );
