@@ -6,8 +6,7 @@ class Footer extends Component{
     return (
       <div>
         <div className="footer">
-          <p>Footer</p>
-          <table id="Content" align="center">
+          <table id="Content">
           <tbody>
             <tr>
               <th>About</th>

@@ -4,6 +4,7 @@ import './App.css';
 import Header from './components/header/Header'; 
 import Categories from './components/categories/Categories';
 import Footer from './components/footer/Footer';
+import Body from './components/body/Body';
 
 
 class App extends Component {
@@ -20,7 +21,10 @@ class App extends Component {
         </div>
         <div>
           <Footer />
-        </div>    
+        </div>
+        <div>
+          <Body />
+        </div>   
       </div>
     );
   }
