@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import { Route } from "react-router-dom";
 import react_logo from './ads.png';
 import './App.css';
 import Header from './components/header/Header'; 
 import Categories from './components/categories/Categories';
 import Footer from './components/footer/Footer';
 import Body from './components/body/Body';
+import AboutPage from './pages/AboutPage';
 
 
 class App extends Component {
@@ -21,6 +23,7 @@ class App extends Component {
         </div>
         <div>
           <Footer />
+          <Route path="/AboutPage" exact component={AboutPage} />
         </div>
         <div>
           <Body />

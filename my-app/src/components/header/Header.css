@@ -53,11 +53,13 @@
     border: none;
 }
 
-
+.login-register{
+    float: right;
+}
     
 .header .search-container button {
     float: right;
-    padding: 6px 10px;
+    padding: 6px;
     margin-top: 8px;
     margin-right: 32px;
     background: #ddd;

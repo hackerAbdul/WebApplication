@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Footer.css';
+import { Link } from 'react-router-dom';
 
 class Footer extends Component{
   render(){
@@ -14,7 +15,7 @@ class Footer extends Component{
               <th>Social Media</th>
             </tr>
             <tr>
-              <td><a href="link1">About Us</a></td>
+              <td><Link to="/AboutPage">About</Link></td>
               <td><a href="link2">FAQs</a></td>
               <td><a href="link3">FaceBook</a></td>
             </tr>
