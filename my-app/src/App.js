@@ -1,36 +1,27 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Route } from "react-router-dom";
-import react_logo from './ads.png';
-import './App.css';
-import Header from './components/header/Header'; 
-import Categories from './components/categories/Categories';
-import Footer from './components/footer/Footer';
-import Body from './components/body/Body';
+import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
+import Header from './components/header/Header';
+import Footer from './components/footer/Footer';
+import react_logo from './ads.png';
+import Categories from './components/categories/Categories';
 
+{/* this is where all the routes are connected to the other pages
+making it a single page application
+also displays the footer navigation bar and also the header on every page */}
 
-class App extends Component {
+const App = () => (
+  <div id="page">
+    <Header logo={react_logo} />
+    <Categories />
+    <Route path="/" exact component={HomePage} />
+    <Route path="/AboutPage" exact component={AboutPage} />
+    <Footer />
+    <div id="footer-spacing">
 
-  render() {
-    return (
-      <div className="container">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <div className="header">
-          <Header  logo={react_logo} />
-        </div>
-        <div className="categories">
-          <Categories />
-        </div>
-        <div>
-          <Footer />
-          <Route path="/AboutPage" exact component={AboutPage} />
-        </div>
-        <div>
-          <Body />
-        </div>   
-      </div>
-    );
-  }
-}
+    </div>
+  </div>
+);
 
 export default App;

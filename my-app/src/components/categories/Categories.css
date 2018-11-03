@@ -27,6 +27,6 @@ li a:hover:not(.active) {
   background-color: #111;
 }
 
-.active {
+.Home-Button {
   background-color: #4CAF50;
 }

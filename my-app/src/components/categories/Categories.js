@@ -1,37 +1,23 @@
 import React, {Component} from 'react';
 import './Categories.css';
+import { Link } from 'react-router-dom';
 
 
-// class Categories extends Component {
-//     render(){
-//         return(
-//             <div className="navbar">
-//                 <a>Home</a>
-//                 <a>News</a>
-//                 <div className="dropdown">
-//                     <button className="dropbtn">Dropdown 
-//                         <i className="fa fa-caret-down" />
-//                     </button>
-//                     <div className="dropdown-content">
-//                         <a>Link 1</a>
-//                         <a>Link 2</a>
-//                         <a>Link 3</a>
-//                     </div>
-//                 </div>
-//             </div>
-
-//         );
-//     };
-// };
+{/*
+    Code here is for displaying the navigation bar 
+    within the web application 
+    each button has a link that allows it to connect
+    with other pages and call other functions
+*/}
 
 class Categories extends Component{
     render(){
         return(
             <ul>
-                <li><a className="active" href="#home">Home</a></li>
+                <li><Link to="/" className="Home-Button">Home</Link></li>
                 <li><a href="#news">News</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li style={{float: 'right'}}><a href="#about">About</a></li>
+                <li style={{float: 'right'}}><Link to="/AboutPage">About</Link></li>
         </ul>
         );
     };

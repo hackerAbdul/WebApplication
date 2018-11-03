@@ -1,8 +1,8 @@
 .footer {
-    position: fixed;
-    left: 0;
     bottom: 0;
-    height: 25%;
+    position: absolute;
+    left: 0;
+    height: 170px;
     width: 100%;
     background-color:rgb(133,125,156);
  }
@@ -10,8 +10,9 @@
  #Content{
     text-align: center;
     font-size: 15px;
-    width: 100%;
-    padding-right: 100px;
+    width: 90%;
+    /* margin-left: auto;
+    margin-right: auto; */
  }
 
  #Content th {

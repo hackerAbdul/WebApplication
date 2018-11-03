@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import './Footer.css';
 import { Link } from 'react-router-dom';
 
+{/*function for running the footer within the web application also has links to other pages 
+via the button displayed in the footer*/}
+
 class Footer extends Component{
   render(){
     return (

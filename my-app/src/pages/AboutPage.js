@@ -1,8 +1,32 @@
 import React from 'react';
 
+{/* this page displays the about page when the about button is pressed */}
+
 const AboutPage = () => (
     <div>
-        <h1>About Us</h1>
+        <div>
+            <h1>
+                this works
+            </h1>
+            <h1>
+                this works
+            </h1>
+            <h1>
+                this works
+            </h1>
+            <h1>
+                this works
+            </h1>
+            <h1>
+                this works
+            </h1>
+            <h1>
+                this works
+            </h1>
+            <h1>
+                this works
+            </h1>
+        </div>
     </div>
 );
 
