@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import '../App.css';
 import Body from '../components/body/Body';
 
-{/*this is the homepage only displays the body on here footer and header is 
-always printed as a continuous function call*/}
+/*this is the homepage only displays the body on here footer and header is 
+always printed as a continuous function call*/
 
 class HomePage extends Component {
 
