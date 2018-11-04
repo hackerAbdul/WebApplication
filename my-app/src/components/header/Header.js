@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Header.css';
+import { Link } from 'react-router-dom';
 
 
 class Header extends Component {
@@ -21,8 +22,7 @@ class Header extends Component {
                 {/* <a href="link9">Login/Register</a> */}
                 <p>Login/Register</p>
             </div>
-            <a  href="#default" className="logo"> {this.props.title}</a> 
-            <img src={this.props.logo} alt="React logo" /><a href="#default" className="logo">Classified Ads</a>
+            <img src={this.props.logo} alt="React logo" /><Link to="/About" className="logo">Classified Ads</Link>
             <div className="header-right">
                 <div className="search-container">
                     <form action="">
