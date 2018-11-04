@@ -17,7 +17,11 @@ class Header extends Component {
     render() {
         return (
         <div className="header">
-            <a href="#default" className="logo"> {this.props.title}</a> 
+            <div className="login-register">
+                {/* <a href="link9">Login/Register</a> */}
+                <p>Login/Register</p>
+            </div>
+            <a  href="#default" className="logo"> {this.props.title}</a> 
             <img src={this.props.logo} alt="React logo" /><a href="#default" className="logo">Classified Ads</a>
             <div className="header-right">
                 <div className="search-container">
@@ -25,10 +29,6 @@ class Header extends Component {
                         <input type="text" placeholder="Search.." name="txtSearch" onChange={this.handleInputChange} />
                         <button type="submit" onClick={this.handleSearchSubmit}>Search</button>
                     </form>
-                </div>
-                <div className="login-register">
-                    {/* <a href="link9">Login/Register</a> */}
-                    <p><a href="link9">Login/Register</a></p>
                 </div>
             </div>
         </div>

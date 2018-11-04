@@ -7,3 +7,14 @@
 #footer-spacing{
     padding: 0 0 170px;
 }
+
+.PagePadding{
+    padding-left: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+    #footer-spacing{
+        padding: 0 0 200px;
+    }
+
+}

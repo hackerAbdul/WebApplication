@@ -24,3 +24,10 @@
 #Content td, #Content th {
     padding: 8px;
 }
+
+@media only screen and (max-width: 600px) {
+    .footer{
+        height: 200px;
+    }
+
+}
