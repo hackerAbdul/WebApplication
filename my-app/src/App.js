@@ -1,11 +1,12 @@
 import React from 'react';
 import { Route } from "react-router-dom";
+import Header from './components/header/Header';
+import NavigationBar from './components/navigationbar/NavigationBar';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import TermsPage from './pages/TermsPage';
 import ContactPage from './pages/ContactPage';
-import Header from './components/header/Header';
-import NavigationBar from './components/navigationbar/NavigationBar';
+import LoginForm from './components/forms/LoginForm';
 import Footer from './components/footer/Footer';
 import react_logo from './ads.png';
 
@@ -23,8 +24,9 @@ const App = () => (
     <div className="PagePadding">
       <Route path="/" exact component={HomePage} />
       <Route path="/About" exact component={AboutPage} />
-      <Route path="/Terms&Conditions" exact component ={TermsPage} />
-      <Route path="/Contact Us" exact component ={ContactPage} />
+      <Route path="/Terms&Conditions" exact component={TermsPage} />
+      <Route path="/Contact Us" exact component={ContactPage} />
+      <Route path="/LogIn" exact component={LoginForm} />
     </div>
     <Footer />
     <div id="footer-spacing">

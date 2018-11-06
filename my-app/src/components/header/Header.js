@@ -20,9 +20,9 @@ class Header extends Component {
         <div className="header">
             <div className="login-register">
                 {/* <a href="link9">Login/Register</a> */}
-                <p>Login/Register</p>
+                <Link to="LogIn"> Login/Register</Link>
             </div>
-            <img src={this.props.logo} alt="React logo" /><Link to="/About" className="logo">Classified Ads</Link>
+            <img src={this.props.logo} alt="React logo" /><Link to="/" className="logo">Classified Ads</Link>
             <div className="header-right">
                 <div className="search-container">
                     <form action="">
