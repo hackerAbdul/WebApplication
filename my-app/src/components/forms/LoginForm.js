@@ -7,53 +7,43 @@ class LoginForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            Username:'', 
-            Password:''
+            username:'',
+            email:''
         };
-    
-        this.handleUsernameChange = this.handleUsernameChange.bind(this);
-        // this.handleSubmit = this.handleSubmit.bind(this);
-        this.signIn = this.signIn.bind(this);
+
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
-    
-    handleUsernameChange(event) {
-        this.setState({Username: event.target.Username});
+
+    handleChange(event){
+        this.setState({email: event.target.value});
+        this.setState({username: event.target.value});
     }
-    
-    signIn(event) {
-        alert('A name was submitted: ' + this.state.Username);
+
+    handleSubmit(event){
+        alert('A name was submitted: ' +  this.state.username + this.state.email);
         event.preventDefault();
     }
     
 
     render(){
         return(
-            <div className="LogIn-Container">
+           <div className="LogIn-container">
                 <form onSubmit={this.handleSubmit}>
-                    <div className="Username-Container">
-                        <label>Username:</label>
-                        <input type="text" placeholder="Enter Username" Username={this.state.Username} onChange={this.handleUsernameChange} />
-                    </div>
-                    <div className="Password">
-                        <label>Password:</label>
-                        <input type="password" placeholder="Enter Password" Password={this.state.Password} onChange={this.handleChange} />
-                    </div>
-                        <button  onClick={this.signIn.bind(this)} type="button"> Sign in </button>
+                    <label>
+                        <h1 id='Username'>Username:</h1>
+                        <input type="text" placeholder="Enter Username" username={this.state.username} onChange={this.handleChange}/>
+                        <h1 id='Email'>Email:</h1>
+                        <input type="text" placeholder="example@example.com" email={this.state.email} onChange={this.handleChange}/>
+                    </label>
+                    <hr />
+                    <input type="submit" value="Submit" />
                 </form>
-            </div>
+           </div> 
         );
     }
 };
 
-export default LoginForm;
 
-/* <div class="loginbox">
-    <h1>Log in here</h1>
-    <form>
-        <p>Username</p>
-        <input type="text" name="" placeholder="Enter Username">
-        <p>Password</p>
-        <input input type="text" name="" placeholder="Enter Username">
-        <input type="submit" name="" value="Login">
-    </form>
-</div> */
+
+export default LoginForm;

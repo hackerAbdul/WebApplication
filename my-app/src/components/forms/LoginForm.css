@@ -1,13 +1,7 @@
-.LogIn-Container{
-    padding-top: 5%;
-
-    border: 5px solid black;
+.LogIn-container{
+  padding-left: 10px;
 }
 
-.Username-Container{
-    padding-bottom: 10px;
-}
-
-.Password-Container{
-    padding-bottom: 10px;
-}
+/* #email{
+  padding-left: 10px;
+} */
