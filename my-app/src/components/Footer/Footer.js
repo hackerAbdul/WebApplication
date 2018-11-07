@@ -19,7 +19,7 @@ class Footer extends Component{
             </tr>
             <tr>
               <td><Link to="/About">About</Link></td>
-              <td><a href="link2">FAQs</a></td>
+              <td><Link to="/FAQs">FAQs</Link></td>
               {/* these links lead to a already set up classified ads company facebook website */}
               <td><a href="https://www.facebook.com/ClassifiedAds.com/" target="_blank" rel="noopener noreferrer" >FaceBook</a></td>
             </tr>
