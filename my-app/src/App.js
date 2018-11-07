@@ -6,9 +6,11 @@ import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import TermsPage from './pages/TermsPage';
 import ContactPage from './pages/ContactPage';
+import FAQsPage from './pages/FAQsPage';
 import LoginForm from './components/forms/LoginForm';
 import Footer from './components/footer/Footer';
 import react_logo from './ads.png';
+
 
 
 
@@ -27,6 +29,7 @@ const App = () => (
       <Route path="/Terms&Conditions" exact component={TermsPage} />
       <Route path="/Contact Us" exact component={ContactPage} />
       <Route path="/LogIn" exact component={LoginForm} />
+      <Route path="/FAQs" exact component={FAQsPage} />
     </div>
     <Footer />
     <div id="footer-spacing">
