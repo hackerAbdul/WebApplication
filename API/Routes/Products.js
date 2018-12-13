@@ -6,15 +6,34 @@ const Product = require('../models/products');
 
 router.get('/', (req, res, next) => {
     Product.find()
+    .select('name price category condition location description _id')
     .exec()
     .then(docs => {
+        const response = {
+            count: docs.length,
+            products: docs.map(doc => {
+                return {
+                    _id: doc._id,
+                    name: doc.name,
+                    price: doc.price,
+                    category: doc.category,
+                    condition: doc.condition,
+                    location: doc.location,
+                    description: doc.description,
+                    request: {
+                        type: 'GET',
+                        url: 'http://localhost:2000/products/' + doc._id
+                    }
+                }
+            })
+        };
         console.log(docs);
         if (docs.length <= 0){
             res.status(404).json({
-                message: "No users found"
+                message: "No products in the listing"
             });
         }else{
-            res.status(200).json(docs)
+            res.status(200).json(response)
         }
     })
     .catch(err => {
@@ -31,7 +50,10 @@ router.post('/', (req, res, next) => {
         _id: new mongoose.Types.ObjectId(),
         name: req.body.name,
         price: req.body.price,
-        location: req.body.location
+        category: req.body.category,
+        condition: req.body.condition,
+        location: req.body.location,
+        description: req.body.description
     });
     //stores model into the db
     product
@@ -39,8 +61,20 @@ router.post('/', (req, res, next) => {
     .then(result => {
         console.log(result);
         res.status(201).json({
-            message: "Handles POST request for /products",
-            createdProduct: result
+            message: "Product has been created",
+            createdProduct: {
+                _id: result._id,
+                name: result.name,
+                price: result.price,
+                category: result.category,
+                condition: result.condition,
+                location: result.location,
+                description: result.description,
+                request: {
+                    type: 'GET',
+                    url: 'http://localhost:2000/products/' + result._id
+                }
+            }
         });
     })
     //Error Handling
@@ -56,6 +90,7 @@ router.post('/', (req, res, next) => {
 router.get('/:productId', (req, res, next) => {
     const id = req.params.productId;
     Product.findById(id)
+    .select('name price category condition location description _id')
     .exec()
     .then(doc => {
         console.log("From database", doc)
@@ -82,7 +117,7 @@ router.patch('/:productId', (req, res, next) => {
     for (const ops of req.body){
         updateOps[ops.propName] = ops.value;
     }
-    Product.update({
+    Product.updateOne({
         _id: id
     },
     {$set: updateOps})
@@ -90,7 +125,11 @@ router.patch('/:productId', (req, res, next) => {
     .then(result => {
         console.log(result);
         res.status(200).json({
-            message: "Updated"
+            message: "Updated",
+            request: {
+                type: 'GET',
+                url: 'http://localhost:2000/products/' + id
+            }
         })
     })
     .catch(err => {
@@ -110,7 +149,9 @@ router.delete('/:productId', (req, res, next) => {
     })
     .exec()
     .then(result => {
-        res.status(200).json(result);
+        res.status(200).json({
+            message: "Item deleted from listing"
+        });
     })
     .catch(err => {
         console.log(err);
