@@ -3,27 +3,28 @@ const express = require('express');
 const app = express();
 const morgan = require('morgan');
 
-
+//declare routes
+const productsRoute = require('./API/Routes/Products');
+const ordersRoute = require('./API/Routes/Orders');
 
 app.use(morgan('short'))
 
+//Request Handles
+app.use('/Products', productsRoute);
+app.use('/Orders', ordersRoute);
 
-app.use((req,res,next) => {
-    res.status(200).json({
-        message: "It works!"
-    })
-})
+app.use((req, res, next) => {
+    const err = new Error('Not found');
+    err.status = 404;
+    next(err);
+});
 
-app.get("/", (req, res) => {
-    console.log("Responding to root route")
-    res.send("Hello from backend")
-})
-
-// app.get("/users", (req, res) =>{
-//     var user1 = {firstName: "Michael", lastName: "Jackson"}
-//     const user2 = {firstName: "Kevin", lastName: "Durant"}
-//     res.json([user1, user2])
-//     //res.send("nodemon auto update when i save files")
-// })
+app.use((err, req, res, next) => {
+    res.status(err.status || 500).json({
+        err: {
+            message: err.message
+        }
+    });
+});
 
 module.exports = app;
