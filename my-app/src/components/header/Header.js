@@ -5,13 +5,6 @@ import { Link } from 'react-router-dom';
 
 class Header extends Component {
     
-    // handleSearchSubmit(event){
-
-    // //prevent the form to be submitted to its action url
-    // event.preventDefault();
-    // this.props.onSearchClick(this.state.SearchTerm);
-    
-    // }
 
     
 
