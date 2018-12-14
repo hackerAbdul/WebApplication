@@ -1,5 +1,6 @@
 {
     "env": {
-        "MONGO_PASS": "304CEM"
+        "MONGO_PASS": "304CEM",
+        "JWTKEY": "304CEM"
     }
 }
