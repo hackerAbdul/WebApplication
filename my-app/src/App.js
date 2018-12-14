@@ -5,6 +5,7 @@ import NavigationBar from './components/navigationbar/NavigationBar';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import TermsPage from './pages/TermsPage';
+import CategoryPage from './pages/CategoryPage';
 import ContactPage from './pages/ContactPage';
 import FAQsPage from './pages/FAQsPage';
 import LoginForm from './components/forms/LoginForm';
@@ -26,6 +27,7 @@ const App = () => (
     <div className="PagePadding">
       <Route path="/" exact component={HomePage} />
       <Route path="/About" exact component={AboutPage} />
+      <Route path="/Categories" exact component={CategoryPage} />
       <Route path="/Terms&Conditions" exact component={TermsPage} />
       <Route path="/Contact Us" exact component={ContactPage} />
       <Route path="/LogIn" exact component={LoginForm} />

@@ -7,6 +7,7 @@ import img6 from './images/img6.jpeg';
 import img7 from './images/img7.jpeg';
 import img8 from './images/img8.jpeg';
 
+
 //an array will contain the data for our thumbnails
 class Data {
 

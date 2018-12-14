@@ -15,7 +15,7 @@ class NavigationBar extends Component{
         return(
             <ul className="NavigationBar">
                 <li className="NavigationItem"><Link to="/" className="Home-Button">Home</Link></li>
-                <li className="NavigationItem"><a href="/categories">Categories</a></li>
+                <li className="NavigationItem"><Link to="/Categories">Categories</Link></li>
                 <li className="NavigationItem"><Link to="/Contact Us">Contact</Link></li>
                 <li className="NavigationItem" style={{float: 'right'}}><Link to="/About">About</Link></li>
         </ul>
