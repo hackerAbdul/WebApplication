@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose')
 const multer = require('multer');
+const Authenticate = require('../middleware/Authentication');
 
 //Initialising directory for uploaded images
 //Image file have a limit of 5mb
@@ -60,7 +61,7 @@ router.get('/', (req, res, next) => {
     })
 });
 
-router.post('/', upload.single('productImage'), (req, res, next) => {
+router.post('/', Authenticate, upload.single('productImage'), (req, res, next) => {
 //Storing instance of req.body into mongoose database
 console.log(req.file);
     const product = new Product({
@@ -129,7 +130,7 @@ router.get('/:productId', (req, res, next) => {
 });
 
 //PATCH route
-router.patch('/:productId', (req, res, next) => {
+router.patch('/:productId', Authenticate, (req, res, next) => {
     const id = req.params.productId;
     const updateOps = {};
     for (const ops of req.body){
@@ -160,7 +161,7 @@ router.patch('/:productId', (req, res, next) => {
 
 
 //Delete route
-router.delete('/:productId', (req, res, next) => {
+router.delete('/:productId', Authenticate, (req, res, next) => {
     const id = req.params.productId
     Product.deleteOne({
         _id: id

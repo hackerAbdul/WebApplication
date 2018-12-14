@@ -1,13 +1,14 @@
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
+const Authenticate = require('../middleware/Authentication');
 
 //Connecting Orders Schema
 const Order = require('../models/orders');
 const Product = require('../models/products');
 
 //Getting all orders
-router.get('/', (req, res, next) =>{
+router.get('/', Authenticate, (req, res, next) =>{
     Order.find()
     .select('quantity product _id')
     .populate('product')
@@ -44,7 +45,7 @@ router.get('/', (req, res, next) =>{
 });
 
 //Posting a new order
-router.post('/', (req, res, next) =>{
+router.post('/', Authenticate, (req, res, next) =>{
     Product.findById(req.body.productId)
         .then(product => {
             if (!product){
@@ -81,8 +82,8 @@ router.post('/', (req, res, next) =>{
     });
 });
 
-router.get('/:orderId', (req, res, next) =>{
-    Order.findById(req.paramsorderId)
+router.get('/:orderId', Authenticate, (req, res, next) =>{
+    Order.findById(req.params.orderId)
     .exec()
     .then(order => {
         res.status(200).json({
@@ -100,7 +101,7 @@ router.get('/:orderId', (req, res, next) =>{
     });
 });
 
-router.delete('/:orderId', (req, res, next) =>{
+router.delete('/:orderId', Authenticate, (req, res, next) =>{
     Order.remove({_id: req.params.orderId})
     .exec()
     .then(result => {

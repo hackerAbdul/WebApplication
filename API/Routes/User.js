@@ -3,6 +3,7 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const Authenticate = require('../middleware/Authentication');
 
 const User = require('../models/user')
 
@@ -101,6 +102,56 @@ router.delete('/:userId', (req,res,next) =>{
             error: err
         });
     })
+})
+
+router.get('/allusers', Authenticate, (req, res, next) =>{
+    User.find()
+    .select('_id email')
+    .exec()
+    .then(docs => {
+        const response = {
+            count: docs.length,
+            products: docs.map(doc => {
+                return {
+                    user: doc,
+                    request: {
+                        type: 'GET',
+                        url: 'http://localhost:2000/user/allusers/' + doc._id
+                    }
+                }
+            })
+        };
+        console.log(docs);
+        if (docs.length <= 0){
+            res.status(404).json({
+                message: "There are no Users"
+            });
+        }else{
+            res.status(200).json(response)
+        }
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json({
+            error: err
+        });
+    })
+})
+
+router.put('/:userId/report', (req, res, next) => {
+    User.findById(req.params.userId)
+    .exec()
+    .then(user => {
+        res.status(200).json({
+            user: user,
+            message: "User has been reported to administrator"
+        })
+    })
+    .catch(err => {
+        res.status(500).json({
+            message: err
+        });
+    });
 })
 
 module.exports = router;
