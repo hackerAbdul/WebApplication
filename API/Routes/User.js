@@ -138,13 +138,31 @@ router.get('/allusers', Authenticate, (req, res, next) =>{
     })
 })
 
-router.put('/:userId/report', (req, res, next) => {
+router.put('/:userId/report', Authenticate, (req, res, next) => {
     User.findById(req.params.userId)
+    .select('_id, email')
     .exec()
     .then(user => {
         res.status(200).json({
             user: user,
             message: "User has been reported to administrator"
+        })
+    })
+    .catch(err => {
+        res.status(500).json({
+            message: err
+        });
+    });
+})
+
+router.put('/:userId/rateuser', Authenticate, (req, res, next) => {
+    User.findById(req.params.userId)
+    .select('_id, email')
+    .exec()
+    .then(user => {
+        res.status(200).json({
+            user: user,
+            message: "You have rated user"
         })
     })
     .catch(err => {
