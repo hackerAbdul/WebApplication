@@ -9,6 +9,7 @@ import CategoryPage from './pages/CategoryPage';
 import ContactPage from './pages/ContactPage';
 import FAQsPage from './pages/FAQsPage';
 import LoginForm from './components/forms/LoginForm';
+import RegisterForm from './components/forms/RegisterForm';
 import Footer from './components/footer/Footer';
 import react_logo from './ads.png';
 
@@ -31,6 +32,7 @@ const App = () => (
       <Route path="/Terms&Conditions" exact component={TermsPage} />
       <Route path="/Contact Us" exact component={ContactPage} />
       <Route path="/LogIn" exact component={LoginForm} />
+      <Route path="/Register" exact component={RegisterForm} />
       <Route path="/FAQs" exact component={FAQsPage} />
     </div>
     <Footer />

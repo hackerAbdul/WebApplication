@@ -1,11 +1,11 @@
-import img1 from './images/img1.jpeg';
-import img2 from './images/img2.jpeg';
-import img3 from './images/img3.jpeg';
-import img4 from './images/img4.jpeg';
-import img5 from './images/img5.jpeg';
-import img6 from './images/img6.jpeg';
-import img7 from './images/img7.jpeg';
-import img8 from './images/img8.jpeg';
+import Macbook from './images/Macbook.jpg';
+import IphoneX from './images/IphoneX.jpeg';
+import BlackOps from './images/BlackOps.png';
+import Bose from './images/bose.jpg';
+import Yeezy from './images/yeezy.jpg';
+import Vans from './images/vans.jpg';
+import Curved from './images/curved.jpg';
+import Car from './images/car.jpg';
 
 
 //an array will contain the data for our thumbnails
@@ -13,52 +13,52 @@ class Data {
 
     static items = [
             {
-                id: "1234",
-                image: img1,
-                title : "this is a title 1",
-                article: "hey this is some text to display for this article"
+                id: "Computer",
+                image: Macbook,
+                title : "Macbook Air",
+                article: "Macbook Air 2013 model 13 inch"
             },
             {
-                id: "1235",
-                image: img2,
-                title : "this is a title 2",
-                article: "hey this is some text to display for this article"
+                id: "Phones",
+                image: IphoneX,
+                title : "IphoneX",
+                article: "Iphone X brand new in the box"
             },
             {
-                id: "1236",
-                image: img3,
-                title : "this is a title 3",
-                article: "hey this is some text to display for this article"
+                id: "Games",
+                image: BlackOps,
+                title : "Black Ops 3",
+                article: "Finished the game need some money"
             },
             {
-                id: "1237",
-                image: img4,
-                title : "this is a title 4",
-                article: "hey this is some text to display for this article"
+                id: "Headphones",
+                image: Bose,
+                title : "Bose Headphones",
+                article: "Used Bose noise cancelling headphones"
             },
             {
-                id: "1238",
-                image: img5,
-                title : "this is a title 5",
-                article: "hey this is some text to display for this article"
+                id: "Shoes",
+                image: Yeezy,
+                title : "Yeezy Offwhite",
+                article: "Yeezy Offwhite collab for resale"
             },
             {
-                id: "1239",
-                image: img6,
-                title : "this is a title 6",
-                article: "hey this is some text to display for this article"
+                id: "Clothes",
+                image: Vans,
+                title : "Vans Hoodie",
+                article: "Vans x Peanut Limited Edition Hoodie"
             },
             {
-                id: "1240",
-                image: img7,
-                title : "this is a title 7",
-                article: "hey this is some text to display for this article"
+                id: "Tvs",
+                image: Curved,
+                title : "Curved Tv",
+                article: "50Inch Curved Ultra HD TV"
             },
             {
-                id: "1241",
-                image: img8,
-                title : "this is a title 8",
-                article: "hey this is some text to display for this article"
+                id: "Toys",
+                image: Car,
+                title : "Toy car",
+                article: "Used toy car my child out grew toys"
             }
         ];
 }

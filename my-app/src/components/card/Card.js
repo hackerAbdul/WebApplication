@@ -24,7 +24,7 @@ class Card extends Component {
             <div className="card">
                 <img src={this.props.image} alt={this.props.imgAlt} style={{width: '100%'}} />
                 <div className="cardContainer">
-                    <Link to={"/Category/" + this.props.id} className="logo"><button  className="linkButton"><h4><b>{this.props.title}</b></h4></button></Link>
+                    <Link to={"/Category/" + this.props.id + "/" + this.props.title } className="logo"><button  className="linkButton"><h4><b>{this.props.title}</b></h4></button></Link>
                     <p>{this.props.article}</p> 
                 </div>
             </div>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './LoginForm.css';
+import { Link } from 'react-router-dom';
 
 class LoginForm extends Component {
 
@@ -21,7 +22,7 @@ class LoginForm extends Component {
     }
 
     handleSubmit(event){
-        alert('A name was submitted: ' +  this.state.username + this.state.email);
+        alert('An email has been submitted: ' +  this.state.email );
         event.preventDefault();
     }
     
@@ -31,13 +32,16 @@ class LoginForm extends Component {
            <div className="LogIn-container">
                 <form onSubmit={this.handleSubmit}>
                     <label>
-                        <h1 id='Username'>Username:</h1>
-                        <input type="text" placeholder="Enter Username" username={this.state.username} onChange={this.handleChange}/>
                         <h1 id='Email'>Email:</h1>
                         <input type="text" placeholder="example@example.com" email={this.state.email} onChange={this.handleChange}/>
+                        <h1 id='Password'>Password</h1>
+                        <input type="password" placeholder="Enter Password"/>
                     </label>
                     <hr />
-                    <input type="submit" value="Submit" />
+                    <input type="submit" value="Log In" />
+                    <br/>
+                    <br/>
+                    <Link to="Register"><input type="submit" value="Register"/></Link>
                 </form>
            </div> 
         );
