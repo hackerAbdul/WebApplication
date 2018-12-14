@@ -8,6 +8,7 @@ const mongoose = require('mongoose');
 //declare routes
 const productsRoute = require('./API/Routes/Products');
 const ordersRoute = require('./API/Routes/Orders');
+const userRoute = require('./API/Routes/User')
 
 mongoose.connect('mongodb://304CEM:' + process.env.MONGO_PASS + '@304cem-api-shard-00-00-2ear1.mongodb.net:27017,304cem-api-shard-00-01-2ear1.mongodb.net:27017,304cem-api-shard-00-02-2ear1.mongodb.net:27017/test?ssl=true&replicaSet=304CEM-API-shard-0&authSource=admin&retryWrites=true', 
 { useNewUrlParser: true }
@@ -16,7 +17,7 @@ mongoose.connect('mongodb://304CEM:' + process.env.MONGO_PASS + '@304cem-api-sha
 app.use(morgan('short'));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
-app.use(express.static('uploads'));
+app.use('/uploads', express.static('uploads'));
 
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
@@ -31,6 +32,7 @@ app.use((req, res, next) => {
 //Request Handles
 app.use('/Products', productsRoute);
 app.use('/Orders', ordersRoute);
+app.use('/User', userRoute);
 
 app.use((req, res, next) => {
     const err = new Error('Not found');
