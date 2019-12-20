@@ -10,8 +10,11 @@ const productsRoute = require('./API/Routes/Products');
 const ordersRoute = require('./API/Routes/Orders');
 const userRoute = require('./API/Routes/User')
 
-mongoose.connect('mongodb://304CEM:' + process.env.MONGO_PASS + '@304cem-api-shard-00-00-2ear1.mongodb.net:27017,304cem-api-shard-00-01-2ear1.mongodb.net:27017,304cem-api-shard-00-02-2ear1.mongodb.net:27017/test?ssl=true&replicaSet=304CEM-API-shard-0&authSource=admin&retryWrites=true', 
+mongoose.connect('mongodb+srv://304CEM:' + process.env.MONGO_PASS + '@api-2ear1.mongodb.net/test?retryWrites=true&w=majority', 
 { useNewUrlParser: true }
+
+
+
 );
 
 app.use(morgan('short'));
